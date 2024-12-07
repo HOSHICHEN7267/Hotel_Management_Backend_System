@@ -7,7 +7,7 @@ import { HotelModule } from './hotel/hotel.module';
     TypeOrmModule.forRoot({
       type: 'mysql',
       host: 'localhost',
-      port: 3306,
+      port: 3307,
       username: 'root',
       password: 'password',
       database: 'hotel_db',
