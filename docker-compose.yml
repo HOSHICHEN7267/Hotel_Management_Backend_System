@@ -15,7 +15,7 @@ services:
     image: mysql:8
     container_name: mysql
     ports:
-      - "3306:3306"
+      - "3307:3306" # Change the port to avoid conflict with local MySQL
     environment:
       MYSQL_ROOT_PASSWORD: password
       MYSQL_DATABASE: hotel_db
