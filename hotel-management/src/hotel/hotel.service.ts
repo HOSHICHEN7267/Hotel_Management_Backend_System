@@ -22,6 +22,7 @@ export class HotelService {
       const stream = createReadStream(resolvedPath).pipe(csvParser());
 
       for await (const row of stream) {
+        console.log('Row: ', row);
         const hotel = {
           name: row.name,
           webLink: row.webLink || null,
@@ -47,5 +48,19 @@ export class HotelService {
         console.error(`Failed to delete temporary file: ${resolvedPath}`, cleanupError);
       }
     }
+  }
+
+  async getHotels(): Promise<Hotel[]> {
+    return this.hotelRepository.find();
+  }
+
+  async addHotel(hotelDto: Partial<Hotel>): Promise<Hotel> {
+    const hotel = this.hotelRepository.create(hotelDto);
+    return this.hotelRepository.save(hotel);
+  }
+
+  async updateHotel(id: number, hotelDto: Partial<Hotel>): Promise<Hotel> {
+    await this.hotelRepository.update(id, hotelDto);
+    return this.hotelRepository.findOneBy({ id });
   }
 }
