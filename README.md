@@ -116,22 +116,6 @@ To run the unit tests:
 npm run test
 ```
 
-### End-to-End Tests
-
-To run the end-to-end tests:
-
-```bash
-npm run test:e2e
-```
-
-### Test Coverage
-
-To generate the test coverage report:
-
-```bash
-npm run test:cov
-```
-
 ## CI/CD Pipeline
 
 The CI/CD pipeline is configured using GitHub Actions. It includes steps for checking out the code, setting up Node.js, installing dependencies, running tests, building the Docker image, and pushing it to Docker Hub.
