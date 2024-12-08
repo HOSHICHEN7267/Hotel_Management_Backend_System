@@ -46,6 +46,10 @@ jobs:
         working-directory: ./hotel-management
         run: npm run test
 
+      # Test docker-compose version
+      - name: Test docker-compose version
+        run: docker-compose --version
+
       # Run integration tests (if needed)
       - name: Run integration tests
         env:
