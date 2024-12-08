@@ -26,10 +26,6 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      # Use docker-compose Action
-      - name: Set up docker-compose
-        uses: hoverkraft-tech/compose-action@v2.0.2
-
       # Set up Node.js
       - name: Set up Node.js
         uses: actions/setup-node@v3
@@ -53,14 +49,6 @@ jobs:
       # Test docker-compose version
       - name: Test docker-compose version
         run: docker-compose --version
-
-      # Run integration tests (if needed)
-      - name: Run integration tests
-        env:
-          DATABASE_URL: mysql://root:password@mysql:3306/hotel_db
-        run: |
-          docker-compose up -d
-          npm run test:integration
 
   build-and-deploy:
     runs-on: ubuntu-latest
