@@ -28,7 +28,7 @@ jobs:
 
       # Use docker-compose Action
       - name: Set up docker-compose
-        uses: docker/compose-action@v2
+        uses: hoverkraft-tech/compose-action@v2.0.2
 
       # Set up Node.js
       - name: Set up Node.js
