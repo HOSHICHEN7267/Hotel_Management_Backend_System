@@ -13,7 +13,7 @@ describe('HotelService', () => {
     save: jest.fn(),
     update: jest.fn(),
     create: jest.fn(),
-    findOneBy: jest.fn(), // 模擬 findOneBy 方法
+    findOneBy: jest.fn(),
   };
 
   beforeEach(async () => {
@@ -40,7 +40,7 @@ describe('HotelService', () => {
     const updatedHotel = { id: 1, ...updateData };
 
     mockHotelRepository.update.mockResolvedValue(undefined);
-    mockHotelRepository.findOneBy.mockResolvedValue(updatedHotel); // 模擬回傳更新後的飯店
+    mockHotelRepository.findOneBy.mockResolvedValue(updatedHotel); // Simulate the updated hotel
 
     const result = await service.updateHotel(1, updateData);
     expect(result).toEqual(updatedHotel);
