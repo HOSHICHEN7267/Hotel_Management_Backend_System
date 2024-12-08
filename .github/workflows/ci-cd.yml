@@ -26,6 +26,10 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
+      # Use docker-compose Action
+      - name: Set up docker-compose
+        uses: docker/compose-action@v2
+
       # Set up Node.js
       - name: Set up Node.js
         uses: actions/setup-node@v3
