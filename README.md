@@ -1,4 +1,4 @@
-# Hotel Management Backend
+# Hotel Management Backend System
 
 This is a backend project for managing hotel information using the NestJS framework. It includes functionalities for adding, updating, and retrieving hotel data, as well as importing hotel data from a CSV file.
 
